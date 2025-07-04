@@ -1,21 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My First Web Page</title>
+    <title>This is the &lt;title&gt; — It shows up on the browser tab</title>
     <style>
-      body { font-family: sans-serif; background: #f0f8ff; text-align: center; }
-      h1 { color: darkblue; }
-    </style>
-    <script>
-      function greetUser() {
-        let name = prompt("What's your name?");
-        alert("Welcome, " + name + "!");
+      body {
+        font-family: sans-serif;
+        background-color: #f9f9f9;
+        padding: 20px;
       }
-    </script>
+      h1 {
+        color: #2c3e50;
+      }
+      code {
+        background: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello, world!</h1>
-    <p>This is my first web page using GitHub Pages.</p>
-    <button onclick="greetUser()">Click Me</button>
+    <h1>&lt;h1&gt; This is a Heading Tag</h1>
+
+    <p>&lt;p&gt; This is a paragraph tag. It is used for regular text content on a web page.</p>
+
+    <ul>
+      <li>&lt;ul&gt; creates an unordered list:</li>
+      <li>&lt;li&gt; Each &lt;li&gt; is a list item</li>
+    </ul>
+
+    <a href="https://example.com" target="_blank">&lt;a&gt; This is a link tag — it goes to another webpage</a>
+
+    <br><br>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Golde33443.jpg/320px-Golde33443.jpg" alt="Example Image" width="200">
+    <p>&lt;img&gt; displays an image. The <code>src</code> attribute is the image URL.</p>
+
+    <button onclick="alert('This is a button!')">
+      &lt;button&gt; Click Me
+    </button>
+    <p>And JavaScript adds interactivity. This button shows an alert.</p>
   </body>
 </html>
