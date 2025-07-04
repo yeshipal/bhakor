@@ -12,4 +12,8 @@
         border-radius: 4px;
       }
 
- #map { height: 400px; width: 50%; margin-top: 30px; }
+ #map {
+    height: 400px;  /* required */
+    width: 100%;
+    margin-top: 20px;
+  }
