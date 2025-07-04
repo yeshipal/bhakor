@@ -35,9 +35,22 @@
     <img src="one-monastery.jpg" alt="Example Image" width="200">
     <p>&lt;img&gt; displays an image. The <code>src</code> attribute is the image URL.</p>
 
-    <button onclick="alert('This is a button!')">
-      &lt;button&gt; Click Me
     </button>
     <p>And JavaScript adds interactivity. This button shows an alert.</p>
+       <h1>This is a &lt;script&gt; tag example</h1>
+    <p>Click the button to enter your name and see JavaScript in action!</p>
+
+    <button onclick="greetUser()">Say Hello</button>
+    <script>
+      // This function runs when the button is clicked
+      function greetUser() {
+        let name = prompt("What's your name?");
+        if (name) {
+          alert("Hello, " + name + "! 👋");
+        } else {
+          alert("You didn't enter a name.");
+        }
+      }
+    </script>
   </body>
 </html>
