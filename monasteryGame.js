@@ -1,11 +1,13 @@
-let x = 100;
-let y = 200;
+let x = 80;
+let y = 100;
 let playerImg;
+let gameStarted = false;
+let opacity = 0;  // Start fully invisible
 
 let obstacles = [
-  { x: 180, y: 100, w: 10, h: 80 },
-  { x: 220, y: 180, w: 10, h: 80 },
-  { x: 140, y: 160, w: 10, h: 80 }
+  { x: 180, y: 50, w: 10, h: 80 },
+  { x: 180, y: 200, w: 10, h: 80 },
+  { x: 100, y: 160, w: 10, h: 80 }
 ];
 
 let goalX = 280;
@@ -62,27 +64,30 @@ function draw() {
   }
 
   // Collision logic
-  for (let obs of obstacles) {
-    let charLeft = x - 20;
-    let charRight = x + 20;
-    let charTop = y - 40;
-    let charBottom = y + 20;
+  if(gameStarted)  {
+      for (let obs of obstacles) {
+      let charLeft = x - 20;
+      let charRight = x + 20;
+      let charTop = y - 40;
+      let charBottom = y + 20;
 
-    let obsRight = obs.x + obs.w;
-    let obsBottom = obs.y + obs.h;
+      let obsRight = obs.x + obs.w;
+      let obsBottom = obs.y + obs.h;
 
-    if (
-      charRight > obs.x &&
-      charLeft < obsRight &&
-      charBottom > obs.y &&
-      charTop < obsBottom
-    ) {
-      score++;
-      x = 50;
-      y = 200;
-      break;
+      if (
+        charRight > obs.x &&
+        charLeft < obsRight &&
+        charBottom > obs.y &&
+        charTop < obsBottom
+      ) {
+        score++;
+        x = 80;
+        y = 100;
+        break;
+      }
     }
   }
+
 
   if (score >= 3) {
     gameOver = true;
@@ -97,7 +102,7 @@ function draw() {
 
 function keyPressed() {
   if (gameOver) return;
-
+  gameStarted = true;
   if (keyCode === RIGHT_ARROW) x += 10;
   if (keyCode === LEFT_ARROW) x -= 10;
   if (keyCode === UP_ARROW) y -= 10;
@@ -106,8 +111,8 @@ function keyPressed() {
 
 function restartGame() {
   score = 0;
-  x = 100;
-  y = 200;
+  x = 80;
+  y = 100;
   gameOver = false;
   restartButton.hide();
 }
