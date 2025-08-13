@@ -23,7 +23,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(400, 300);
+  let cv = createCanvas(400, 300);
+  cv.parent('game');
 
   // Create the restart button but hide it for now
   restartButton = createButton("Restart");
