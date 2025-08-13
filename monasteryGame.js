@@ -19,7 +19,7 @@ let gameOver = false;
 let restartButton;
 
 function preload() {
-  playerImg = loadImage("char.png");
+  playerImg = loadImage("images/tibetanboy.png");
 }
 
 function setup() {
