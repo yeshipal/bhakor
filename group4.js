@@ -36,14 +36,30 @@ let buildSteps = 0; // 0: none, 1: servers, 2: data, 3: train (done)
 // =========================
 //  Lifecycle
 // =========================
+
 function preload() {
-  // Core sprites (use your filenames; fallback safe)
-  methok = loadImage("Methok.png");
-  coinImg = loadImage("Coin.png");
-  bgImage = loadImage("background.png");
-  // Optional: a beggar sprite
-  beggarImg = loadImage("beggar.png", () => {}, () => { beggarImg = null; });
+  methok = loadImage("Methok.png",
+    () => console.log("OK: Methok.png"),
+    (err) => console.error("FAILED: Methok.png", err)
+  );
+
+  coinImg = loadImage("Coin.png",
+    () => console.log("OK: Coin.png"),
+    (err) => console.error("FAILED: Coin.png", err)
+  );
+
+  bgImage = loadImage("background.png",
+    () => console.log("OK: background.png"),
+    (err) => console.error("FAILED: background.png", err)
+  );
+
+  // optional
+  beggarImg = loadImage("beggar.png",
+    () => console.log("OK: beggar.png"),
+    (err) => { console.warn("FAILED: beggar.png (will draw a fallback)"); beggarImg = null; }
+  );
 }
+
 
 function setup() {
   createCanvas(600, 400);
