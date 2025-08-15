@@ -111,9 +111,9 @@ function checkStageChange() {
 }
 
 function preload() {
-  bounceSound = loadSound('Sound/plasma-bounce-357127-[AudioTrimmer.com].mp3');
-  gameOverSound = loadSound('Sound/negative_beeps-6008.mp3');
-  bgMusic = loadSound('Sound/Different Heaven - Nekozilla [NCS Release].mp3');
+  //bounceSound = loadSound('Sound/plasma-bounce-357127-[AudioTrimmer.com].mp3');
+  //gameOverSound = loadSound('Sound/negative_beeps-6008.mp3');
+  //bgMusic = loadSound('Sound/Different Heaven - Nekozilla [NCS Release].mp3');
 }
 
 function setup() {
@@ -340,8 +340,8 @@ function draw() {
         return;
       } else {
         player.jump();
-        bounceSound.setVolume(0.3);
-        bounceSound.play();
+      //  bounceSound.setVolume(0.3);
+       // bounceSound.play();
       }
     }
 
@@ -449,10 +449,11 @@ function startGame() {
     firstTime = false;
   }
 
-   if (!bgMusic.isPlaying()) {
+ /* if (!bgMusic.isPlaying()) {
     bgMusic.setVolume(0.1);
     bgMusic.loop();
   }
+  */
 }
 
 function resetGame() {
@@ -473,10 +474,11 @@ function resetGame() {
   nextEventSpawnTime = 0;
   scheduleNextEvent();
 
-  if (!bgMusic.isPlaying()) {
+  /*if (!bgMusic.isPlaying()) {
     bgMusic.setVolume(0.1);
     bgMusic.loop();
   }
+*/
   let startPad = new Pad(width / 2 - 40, height - 100, false, false, false);
   pads.push(startPad);
 
@@ -504,7 +506,7 @@ function endGame() {
   checkHighScore();
   gameOver = true;
 
-  if (bgMusic.isPlaying()) {
+  /*if (bgMusic.isPlaying()) {
     bgMusic.stop();
   }
 
@@ -512,6 +514,7 @@ function endGame() {
     gameOverSound.setVolume(0.2);
     gameOverSound.play();
   }
+  */
 }
 
 // --- Event helpers ---
